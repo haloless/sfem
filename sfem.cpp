@@ -1,0 +1,53 @@
+// sfem.cpp : コンソール アプリケーションのエントリ ポイントを定義します。
+//
+
+#include "stdafx.h"
+
+#include "sfem.h"
+
+#include <iostream>
+
+////////////////////////////////////////////////////////////////////////////////
+BEGIN_SFEM_NS;
+
+////////////////////////////////////////////////////////////////////////////////
+
+static int spaceDim = 3;
+static int coordSys = CoordType::Cartesian;
+
+void SetSpaceDim(int nd)
+{
+	spaceDim = nd;
+}
+
+int SpaceDim()
+{
+	return spaceDim;
+}
+
+void SetCoordSys(int coord)
+{
+	coordSys = coord;
+
+	// check consistency
+	if (coordSys == CoordType::RZ) {
+		if (spaceDim != 2) {
+
+		}
+	}
+}
+
+int CoordSys()
+{
+	return coordSys;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+END_SFEM_NS;
+////////////////////////////////////////////////////////////////////////////////
+
+
+
